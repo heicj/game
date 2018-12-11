@@ -14,3 +14,7 @@ const ovalOffice = {
 export const rooms = {
   ovalOffice
 };
+
+export const start = {
+  ovalOffice
+};
