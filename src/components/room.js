@@ -16,15 +16,24 @@ export default class Room extends Component {
   }
 
   render(){
-    const { room } = this.props
+    const { room } = this.props;
     const { title, image, description, items, people, doors } = room;
     const imageUrl = require(`../img/${image}`);
 
     return (
-      <main>
-        <h1>{title}</h1>
-        <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
-      </main>
+      <div>
+        <h1 className="roomDetails">{title}</h1>
+        <h3 className="roomDetails">{description}</h3>
+        <main className="grid-container">
+          <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+          <ul>{Object.keys(doors).map(key => (
+            <li key={key}>
+              <button>{directions[key]}</button>
+            </li>
+          ))}
+          </ul>
+        </main>
+      </div>
     );
   }
 }
