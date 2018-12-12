@@ -9,11 +9,19 @@ export default class App extends Component {
     room: start
   };
 
+  handleMove = roomKey => {
+    this.setState({
+      room: this.state.rooms[roomKey]
+    });
+  };
+
   render(){
     const { room } = this.state;
     return (
       <div>
-        <Room room={room}/>
+        <Room room={room}
+          onMove={this.handleMove}
+        />
       </div>
     );
   }

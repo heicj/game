@@ -16,7 +16,7 @@ export default class Room extends Component {
   }
 
   render(){
-    const { room } = this.props;
+    const { room, onMove } = this.props;
     const { title, image, description, items, people, doors } = room;
     const imageUrl = require(`../img/${image}`);
 
@@ -28,7 +28,7 @@ export default class Room extends Component {
           <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
           <ul>{Object.keys(doors).map(key => (
             <li key={key}>
-              <button>{directions[key]}</button>
+              <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
             </li>
           ))}
           </ul>

@@ -11,8 +11,20 @@ const ovalOffice = {
   }
 };
 
+const westColonnade = {
+  title: 'West Colonnade',
+  image: 'westColonnade2.jpg',
+  description: 'You step outside to the West Colonnade.',
+  items: [],
+  people: [],
+  doors: {
+    w: 'ovalOffice'
+  }
+};
+
 export const rooms = {
-  ovalOffice
+  ovalOffice,
+  westColonnade
 };
 
 export const start = ovalOffice;
