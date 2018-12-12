@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Room from './room.js';
 import { rooms, start }  from './rooms.js';
 
 export default class App extends Component {
@@ -12,8 +13,7 @@ export default class App extends Component {
     const { room } = this.state;
     return (
       <div>
-        hello
-        {room.ovalOffice.title}
+        <Room room={room}/>
       </div>
     );
   }
