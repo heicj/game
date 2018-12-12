@@ -1,7 +1,7 @@
 const ovalOffice = {
   title: 'Oval Office',
   image: 'ovalOffice.jpg',
-  description: '',
+  description: 'You enter the Oval Office, the working space of the President.',
   items: [],
   people: [],
   doors: {

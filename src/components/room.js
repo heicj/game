@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './room.css';
 
 const directions = {
   e: 'East',
@@ -9,14 +10,30 @@ const directions = {
 
 export default class Room extends Component {
 
+  handleBackgroundImage(props){
+    const imageUrl = require(`../img/${props.image}.jpg`);
+    return <div style={{ backgroundImage: `url(${imageUrl})` }}/>;
+  }
+
   render(){
-    const { room } = this.props
+    const { room } = this.props;
     const { title, image, description, items, people, doors } = room;
     const imageUrl = require(`../img/${image}`);
 
     return (
-      <h1>{title}</h1>
-    
+      <div>
+        <h1 className="roomDetails">{title}</h1>
+        <h3 className="roomDetails">{description}</h3>
+        <main className="grid-container">
+          <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
+          <ul>{Object.keys(doors).map(key => (
+            <li key={key}>
+              <button>{directions[key]}</button>
+            </li>
+          ))}
+          </ul>
+        </main>
+      </div>
     );
   }
 }

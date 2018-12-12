@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Room from './room.js';
+import Room from './Room.js';
 import { rooms, start }  from './rooms.js';
 
 export default class App extends Component {
