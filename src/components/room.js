@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './room.css';
+const quote = require('../functions/quote');
 
 const directions = {
   e: 'East',
@@ -9,6 +10,7 @@ const directions = {
 };
 
 export default class Room extends Component {
+
 
   handleBackgroundImage(props){
     const imageUrl = require(`../img/${props.image}.jpg`);
@@ -24,6 +26,7 @@ export default class Room extends Component {
       <div>
         <h1 className="roomDetails">{title}</h1>
         <h3 className="roomDetails">{description}</h3>
+        <p>{quote}</p>
         <main className="grid-container">
           <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
           <ul>{Object.keys(doors).map(key => (
