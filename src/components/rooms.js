@@ -40,7 +40,31 @@ const westColonnade = {
   items: [],
   people: [],
   doors: {
-    w: 'ovalOffice'
+    w: 'ovalOffice',
+    s: 'roseGarden',
+    e: 'palmRoom'
+  }
+};
+
+const roseGarden = {
+  title: 'Rose Garden',
+  image: 'roseGarden.jpg',
+  description: 'You step outside to the Rose Garden.',
+  items: [],
+  people: [],
+  doors: {
+    n: 'westColonnade'
+  }
+};
+
+const palmRoom = {
+  title: 'Palm Room',
+  image: 'palmRoom.jpg',
+  description: 'You ener the Palm Room. Staging room between the West Wing and the White House',
+  items: [],
+  people: [],
+  doors: {
+    w: 'westColonnade',
   }
 };
 
@@ -48,7 +72,9 @@ export const rooms = {
   ovalOffice,
   westColonnade,
   corridor,
-  rooseveltRoom
+  rooseveltRoom,
+  roseGarden,
+  palmRoom
 };
 
 export const start = ovalOffice;

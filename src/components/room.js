@@ -19,14 +19,13 @@ export default class Room extends Component {
 
   render(){
     const { room, onMove } = this.props;
-    const { title, image, description, items, people, doors } = room;
+    const { title, image, description, doors } = room;
     const imageUrl = require(`../img/${image}`);
 
     return (
       <div>
         <h1 className="roomDetails">{title}</h1>
         <h3 className="roomDetails">{description}</h3>
-        <p>{quote}</p>
         <main className="grid-container">
           <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
           <ul>{Object.keys(doors).map(key => (
