@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './room.css';
+const quote = require('../functions/quote');
 
 const directions = {
   e: 'East',
@@ -10,14 +11,15 @@ const directions = {
 
 export default class Room extends Component {
 
+
   handleBackgroundImage(props){
     const imageUrl = require(`../img/${props.image}.jpg`);
     return <div style={{ backgroundImage: `url(${imageUrl})` }}/>;
   }
 
   render(){
-    const { room } = this.props;
-    const { title, image, description, items, people, doors } = room;
+    const { room, onMove } = this.props;
+    const { title, image, description, doors } = room;
     const imageUrl = require(`../img/${image}`);
 
     return (
@@ -28,7 +30,7 @@ export default class Room extends Component {
           <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
           <ul>{Object.keys(doors).map(key => (
             <li key={key}>
-              <button>{directions[key]}</button>
+              <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
             </li>
           ))}
           </ul>
