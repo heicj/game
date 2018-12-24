@@ -30,7 +30,7 @@ export default class Room extends Component {
           <div className="imgDiv" style={{ backgroundImage: `url(${imageUrl})` }}></div>
           <ul>{Object.keys(doors).map(key => (
             <li key={key}>
-              <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
+              <button onClick={() => onMove(room.doors[key])}>{room.connections[key]}</button>
             </li>
           ))}
           </ul>

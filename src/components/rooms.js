@@ -7,6 +7,10 @@ const ovalOffice = {
   doors: {
     n: 'corridor',
     e: 'westColonnade'
+  },
+  connections: {
+    n: 'Corridor',
+    e: 'West Colonnade'
   }
 };
 
@@ -19,6 +23,10 @@ const corridor = {
   doors: {
     s: 'ovalOffice',
     w: 'rooseveltRoom'
+  },
+  connections: {
+    s: 'Oval Office',
+    w: 'Roosevelt Room'
   }
 };
 
@@ -30,6 +38,9 @@ const rooseveltRoom = {
   people: [],
   doors: {
     e: 'corridor'
+  },
+  connections: {
+    e: 'Corridor'
   }
 };
 
@@ -43,6 +54,11 @@ const westColonnade = {
     w: 'ovalOffice',
     s: 'roseGarden',
     e: 'palmRoom'
+  },
+  connections: {
+    w: 'Oval Office',
+    s: 'Rose Garden',
+    e: 'Palm Room'
   }
 };
 
@@ -54,6 +70,9 @@ const roseGarden = {
   people: [],
   doors: {
     n: 'westColonnade'
+  },
+  connections: {
+    n: 'West Colonnade'
   }
 };
 
@@ -65,6 +84,25 @@ const palmRoom = {
   people: [],
   doors: {
     w: 'westColonnade',
+    e: 'centerHall'
+  },
+  connections: {
+    w: 'West Colonnade',
+    e: 'Center Hall'
+  }
+};
+
+const centerHall = {
+  title: 'Center Hall',
+  image: 'centerHall.jpg',
+  description: 'You are in the main hall on the ground floor of the White House Residency',
+  items: [],
+  people: [],
+  doors: {
+    w: 'palmRoom',
+  },
+  connections: {
+    w: 'Palm Room'
   }
 };
 
@@ -74,7 +112,8 @@ export const rooms = {
   corridor,
   rooseveltRoom,
   roseGarden,
-  palmRoom
+  palmRoom,
+  centerHall
 };
 
 export const start = ovalOffice;
