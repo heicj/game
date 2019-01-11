@@ -100,9 +100,89 @@ const centerHall = {
   people: [],
   doors: {
     w: 'palmRoom',
+    s: 'diplomaticReceptionRoom',
+    n: 'entranceHall',
+    e: 'visitorsFoyer'
   },
   connections: {
-    w: 'Palm Room'
+    w: 'Palm Room',
+    s: 'Diplomatic Reception Room',
+    n: 'Upstairs',
+    e: 'Visitors Foyer'
+  }
+};
+
+const visitorsFoyer = {
+  title: "Visitor/'s Foyer",
+  image: 'visitorsFoyer.jpg',
+  description: "You enter the Visitor/'s Foyer",
+  items: [],
+  people: [],
+  doors: {
+    w: 'centerHall',
+  },
+  connections: {
+    w: 'Center Hall'
+  }
+};
+
+const diplomaticReceptionRoom = {
+  title: 'Diplomatic Reception Room',
+  image: 'diplomaticReceptionRoom.jpg',
+  description: 'You enter the diplomatic reception room',
+  items: [],
+  people: [],
+  doors: {
+    n: 'centerHall',
+  },
+  connections: {
+    n: 'Center Hall'
+  }
+};
+
+const entranceHall = {
+  title: 'Entrance Hall',
+  image: 'entranceHall.jpg',
+  description: 'You are in the main entrance hall',
+  items: [],
+  people: [],
+  doors: {
+    n: 'centerHall',
+    w: 'stateDiningRoom',
+    e: 'eastRoom'
+  },
+  connections: {
+    n: 'Downstairs',
+    w: 'State Dining Room',
+    e: 'East Room'
+  }
+};
+
+const stateDiningRoom = {
+  title: 'State Dining Room',
+  image: 'stateDiningRoom.jpg',
+  description: 'Enter the State Dining Room',
+  items: [],
+  people: [],
+  doors: {
+    e: 'entranceHall',
+  },
+  connections: {
+    e: 'Entrance Hall'
+  }
+};
+
+const eastRoom = {
+  title: 'East Room',
+  image: 'eastRoom.jpg',
+  description: 'This is the East Room of the Residency.',
+  items: [],
+  people: [],
+  doors: {
+    w: 'entranceHall',
+  },
+  connections: {
+    w: 'Entrance Hall'
   }
 };
 
@@ -113,7 +193,12 @@ export const rooms = {
   rooseveltRoom,
   roseGarden,
   palmRoom,
-  centerHall
+  centerHall,
+  diplomaticReceptionRoom,
+  entranceHall,
+  stateDiningRoom,
+  eastRoom,
+  visitorsFoyer
 };
 
-export const start = ovalOffice;
+export const start = entranceHall;
